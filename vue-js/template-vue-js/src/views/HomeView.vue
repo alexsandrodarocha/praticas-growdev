@@ -11,9 +11,3 @@ import TheWelcome from '../components/TheWelcome.vue';
   </main>
   <FooterApp />
 </template>
-
-<style scoped>
-main {
-  margin: 5vw;
-}
-</style>

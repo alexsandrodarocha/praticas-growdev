@@ -7,30 +7,18 @@
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/notes">Notes</RouterLink>
+        <RouterLink to="/products">Products</RouterLink>
       </nav>
     </div>
   </header>
 </template>
 
-<style scoped>
-h1 {
-  text-align: center;
-  margin-top: 2em;
-}
-
+<style>
 header {
   line-height: 1.5;
-  background-color: #e0e0e0;
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.wrapper {
-  width: 100%;
-  display: flex;
+  background-color: blue;
 }
 
 .logo {
@@ -43,8 +31,6 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
-  display: flex;
-  justify-content: center;
 }
 
 nav a.router-link-exact-active {
@@ -59,7 +45,6 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
-  font-size: 24px;
 }
 
 nav a:first-of-type {

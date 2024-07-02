@@ -1,30 +1,47 @@
 <script setup lang="ts">
 import MenuApp from '@/components/Menu.vue';
 import FooterApp from '@/components/Footer.vue';
-import CardComponent from '@/components/CardComponent.vue';
+import { onMounted, ref } from 'vue';
+import { doGet } from '@/services/api';
+import { type NoteType } from '@/types';
+import CardItem from '@/components/CardItem.vue';
+import checkLogged from '@/utils/checkLogged';
+
+const notes = ref<NoteType[]>([]);
+
+const getData = async () => {
+  const data = await doGet('/notes');
+
+  if (data.length) {
+    notes.value = data;
+  }
+};
+
+onMounted(() => {
+  getData();
+  checkLogged('/notes');
+});
 </script>
 
 <template>
   <MenuApp />
   <main>
-    <div class="container">
-      <CardComponent />
+    <h1>Notes</h1>
+
+    <div class="wrapper-cards">
+      <CardItem v-for="item in notes" :key="item.id" :item="item" />
     </div>
   </main>
   <FooterApp />
 </template>
 
-<style scoped>
-.container {
+<style>
+.wrapper-cards {
   display: flex;
-  gap: 25px;
   flex-wrap: wrap;
-  margin: 5vw 10vw;
-  justify-content: center;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 2em;
+main {
+  margin: 0px 20px;
 }
 </style>

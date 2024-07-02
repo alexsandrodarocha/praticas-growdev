@@ -6,4 +6,4 @@ interface NoteType {
   user_id: number;
 }
 
-export default NoteType;
+export type { NoteType };

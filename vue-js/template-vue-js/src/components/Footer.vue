@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <h3>Desenvolvido por ARdev</h3>
+    <h3>Desenvolvido agora</h3>
   </footer>
 </template>
 
@@ -8,7 +8,6 @@
 footer {
   padding: 20px;
   text-align: center;
-  background-color: black;
-  color: white;
+  background-color: brown;
 }
 </style>
